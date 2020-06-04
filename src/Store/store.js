@@ -1,10 +1,15 @@
 import { createStore } from "redux";
-
+import { INCREMENT_COUNT } from "../Action/action";
 const initialState = {
   count: 10,
 };
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
+    case INCREMENT_COUNT:
+      return {
+        ...state,
+        count: state.count + 1,
+      };
     default:
       return state;
   }
